@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CHATBOT</title>
+	<link href="https://fonts.googleapis.com/css?family=Euphoria+Script|Poppins|Amatic+SC|Encode+Sans+Condensed" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<style type="text/css">
+		a {
+		 margin: 1%; 
+		}
+
+		.navbar {
+			height: 40px;
+			width: 102%;
+		}
+
+		.name_heading {
+			font-size: 2em !important;
+		}
+
+		.page-header {
+		  font-size: 10px;
+		  color: white;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark sticky-top">
+		<div class="container-fluid">
+			<div class="page-header">
+				<p class="name_heading" >S.E.R.A.I</p>
+			</div>
+		</div>
+	</nav>
+	<a href="{% url 'login' %}" class="btn btn-dark" role = "button">Restart</a>
+	<div class="embed-responsive embed-responsive-16by9">
+	  <iframe class="embed-responsive-item" src="https://console.dialogflow.com/api-client/demo/embedded/4b71c36f-ffd6-4289-8d3d-64fb7fec1648"></iframe>
+	</div>
+</body>
+</html>

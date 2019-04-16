@@ -1,0 +1,147 @@
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<link href="https://fonts.googleapis.com/css?family=Euphoria+Script|Poppins|Amatic+SC|Encode+Sans+Condensed" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<style type="text/css">
+		html, body {
+		  position: relative;
+		  height: 100%;
+		  width: 99%;
+		  background-color: #e9ecef;
+		  padding: 0vh;
+		}
+
+		.ml-form {
+		  padding-left: 20%;
+		  padding-top: 5%;
+		}
+
+		.btn-primary {
+		  margin-top: 2%; 
+		}
+
+		.row, a {
+		 margin-top: 2%; 
+		}
+
+		@media screen {
+		        body {
+		          font-style: bold;
+		          font-family: 'Poppins', sans-serif;
+		        }
+		}
+
+
+		.carousel-item {
+		  transition: -webkit-transform 0.5s ease;
+		  transition: transform 0.5s ease;
+		  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+		  -webkit-backface-visibility: visible;
+		  backface-visibility: visible;
+		}
+
+		.navbar {
+			height: 40px;
+			width: 102%;
+		}
+
+		.name_heading {
+			font-size: 2em !important;
+		}
+
+		.page-header {
+		  font-size: 10px;
+		  color: white;
+		}
+
+	</style>
+	
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark sticky-top">
+		<div class="container-fluid">
+			<div class="page-header">
+				<p class="name_heading" >S.E.R.A.I</p>
+			</div>
+		</div>
+	</nav>
+	<form class="ml-form" autocomplete="off" action="{% url 'evaluate' %}" method="post">{% csrf_token %}
+		<div class="row">
+			<div class="col-sm-5">
+				<label for="exampleInputEmail1" class="bmd-label-placeholder">Vice-President of India?</label>
+			</div>
+			<div class="col-sm-5">
+				<input name="naidu" class="form-control" type="text" placeholder="Answer">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-5">
+				<label for="exampleInputEmail1" class="bmd-label-placeholder">Place where Nobel prize is given?</label>
+			</div>
+			<div class="col-sm-5">
+				<input name="sweden" class="form-control" type="text" placeholder="Answer">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-5">
+				<label for="exampleInputEmail1" class="bmd-label-placeholder">Yougest Millionaire?</label>
+			</div>
+			<div class="col-sm-5">
+				<input name="kylie" class="form-control" type="text" placeholder="Answer">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-5">
+				<label for="exampleInputEmail1" class="bmd-label-placeholder">Highest Subscribed Youtuber?</label>
+			</div>
+			<div class="col-sm-5">
+				<input name="pewdiepie" class="form-control" type="text" placeholder="Answer">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-5">
+				<label for="exampleInputEmail1" class="bmd-label-placeholder">Rafeal Deal Country?</label>
+			</div>
+			<div class="col-sm-5">
+				<input name="france" class="form-control" type="text" placeholder="Answer">
+			</div>
+		</div>
+
+		<input class="btn btn-primary" type="submit" value="Submit">
+
+
+		</div>
+	</form>
+
+		<form class="ml-form" autocomplete="off" action="{% url 'resume' %}" method="post">
+			{% csrf_token %}
+				<div class="col-sm-10">
+					<label class="form-control" for="fileupload">Select a Resume to upload</label> 
+					{% if enable %}
+					<input class="btn btn-primary" type="submit" value="Upload Resume" />
+					{% else %}
+					<input class="btn btn-primary" type="submit" value="Upload Resume" disabled/>
+					{% endif %}
+					<a href="{% url 'login' %}" class="btn btn-dark" role = "button">Restart</a>
+				</div>
+		</form>
+
+		
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+languages
+c
+c++
+shell
+python
+operating systems
+windows 98/2000/xp
+gnu/linux
+technologies
+html
+cgi
+php
+mysql
+tools
+microsoft office
+latex
+gnu/gcc
+visual studio 2005/08
