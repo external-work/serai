@@ -99,7 +99,7 @@ def run(filename):
         #print("Total Number of skills found for ",name," : ",count)
         # for key in skills:
         # 	print(key," : ",skills[key])
-        with open("Login/assets/output.txt","w") as file:
+        with open("Login/assets/output.txt","w+") as file:
             for key in skills:
                 file.write(key)
                 file.write('\n')
