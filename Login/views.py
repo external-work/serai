@@ -12,6 +12,7 @@ from .forms import DocumentForm
 enable = False
 context = {}
 authenticated = False
+name = "Unknown"
 
 def logging(request):
 	global authenticated
@@ -37,7 +38,7 @@ def call_main(request):
 	return render(request, 'Login/main.html', context)
 
 def place(request):
-	global authenticated
+	global authenticated, name
 	if not authenticated:
 		return logging(request)
 	context = {}
@@ -46,6 +47,13 @@ def place(request):
 		context = {
 			'company_name' : company_name,
 		}
+		all_users = Clients.objects.all()
+		for user in all_users:
+			if name == user.user_name:
+				user.company = company_name
+				user.save()
+
+
 	command = str(os.path.dirname(os.path.realpath(__file__))+"/assets/output.txt")
 	command = "rm " + command
 	os.system(command)
@@ -113,7 +121,7 @@ def evaluate(request):
 		return render(request, 'Login/main.html', context)
 
 def execute_query(request):
-	global authenticated
+	global authenticated, name
 	if request.method == 'POST':
 		data = Clients()
 		form = request.POST
@@ -133,6 +141,7 @@ def execute_query(request):
 		for user in all_users:
 			if form.__getitem__('username') == user.user_name and form.__getitem__('password') == user.password:
 				### go to main page
+				name = form.__getitem__('username')
 				authenticated = True
 				return call_main(request)
 				
