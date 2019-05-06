@@ -96,9 +96,9 @@ def run(filename):
         	if section_complete(line,"Skills"):
         		printer = False
 
-        #print("Total Number of skills found for ",name," : ",count)
-        # for key in skills:
-        # 	print(key," : ",skills[key])
+        print("Total Number of skills found for ",name," : ",count)
+        for key in skills:
+        	print(key," : ",skills[key])
         with open("Login/assets/output.txt","w") as file:
             for key in skills:
                 file.write(key)

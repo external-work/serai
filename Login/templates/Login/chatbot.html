@@ -27,6 +27,11 @@
 		  font-size: 10px;
 		  color: white;
 		}
+
+		iframe {
+			height: 100%;
+			width: 100%;
+		}
 	</style>
 </head>
 <body>
@@ -37,9 +42,13 @@
 			</div>
 		</div>
 	</nav>
+	
 	<a href="{% url 'login' %}" class="btn btn-dark" role = "button">Restart</a>
 	<div class="embed-responsive embed-responsive-16by9">
-	  <iframe class="embed-responsive-item" src="https://console.dialogflow.com/api-client/demo/embedded/4b71c36f-ffd6-4289-8d3d-64fb7fec1648"></iframe>
+	  <iframe
+    allow="microphone;"
+    src="https://console.dialogflow.com/api-client/demo/embedded/4b71c36f-ffd6-4289-8d3d-64fb7fec1648">
+</iframe>
 	</div>
 </body>
 </html>
